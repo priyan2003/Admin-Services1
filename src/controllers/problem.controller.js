@@ -1,6 +1,7 @@
-function pingProblemController(req, res){
-    return res.json({message: 'Ping controller is up'});
+function pingProblemController(req,res){
+    return res.json({message: 'ping is up'});
 }
+
 function addProblem(req,res){
      return res.status(501).json({
         message:'Not implemented'
@@ -39,5 +40,6 @@ module.exports = {
     getProblem,
     getProblems,
     deleteProblem,
-    updateProblem
+    updateProblem,
+    pingProblemController
 }
