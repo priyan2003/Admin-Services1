@@ -26,18 +26,32 @@ async function addProblem(req,res,next){
 }
 
 
-function getProblem(req,res){
+async function getProblem(req,res,next){
     try{
-        throw new NotImplementedError('Add Problem');
+        console.log(req.params.id);
+        const aProblem = await problemService.getAProblem(req.params.id);
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: 'Successfully fetch a problem',
+            error: {},
+            data: aProblem
+        });
+
     }catch(error){
         next(error);
     }
 }
 
 
-function getProblems(req,res){
+async function getProblems(req,res,next){
     try{
-        throw new NotImplementedError('Add Problem');
+        const response = await problemService.getAllProblems();
+        return res.status(StatusCodes.OK).json({
+            succcess: true,
+            message: 'Successfully fetched all the problems',
+            error: {},
+            data: response
+        });
     }catch(error){
         next(error);
     }
