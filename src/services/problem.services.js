@@ -1,3 +1,4 @@
+const { deleteProblem } = require('../controllers/problem.controller');
 const sanitizeMarkdownContent = require('../utils/markdownSanitize')
 class ProblemService{
     constructor(problemRepository){
@@ -24,6 +25,14 @@ class ProblemService{
     }
     async getAProblem(id){
         const problem = await this.problemRepository.getAProblem(id)
+        return problem;
+    }
+    async deleteProblem(id){
+        const problem = await this.problemRepository.deleteProblem(id)
+        return problem;
+    }
+    async updateProblem(id,updatedData){
+        const problem = await this.problemRepository.updateProblem(id,updatedData)
         return problem;
     }
 }
