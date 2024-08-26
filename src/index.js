@@ -21,7 +21,7 @@ app.listen(PORT, async ()=>{
     console.log(`Server started at ${PORT}`);
     await connectToDB();
     console.log("Successfully connect to DB");
-    // // dummy code to check 
+    //  dummy code to check 
     // const Cat = mongoose.model('Cat', { name: String });
 
     // const kitty = new Cat({ name: 'Zildjian' });

@@ -7,7 +7,7 @@ const problemService = new ProblemService(new ProblemRepository());
 
 
 function pingProblemController(req,res){
-    return res.json({message: 'ping is up'});
+    return res.status(200).json({message: 'ping is up'});
 }
 
 async function addProblem(req,res,next){
